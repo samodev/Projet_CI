@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Git Clone') {
 			steps {
-				git ([url:https://gitlab.com/projet_ci_sll/Projet_CI, branch: 'master' ])
+				git ([url: "https://gitlab.com/projet_ci_sll/Projet_CI.git", branch: 'master' ])
 			}
 		}
 		stage('Maven Clean') {
