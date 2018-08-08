@@ -7,9 +7,7 @@ pipeline {
 			}
 		}
 		stage('checkout') {
-			steps {
 				checkout(scm) sh "git checkout master"
-			}
 		}
 		stage('Maven Clean') {
 			steps {
