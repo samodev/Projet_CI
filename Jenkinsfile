@@ -6,6 +6,11 @@ pipeline {
 				git ([url: "https://gitlab.com/projet_ci_sll/Projet_CI.git", branch: 'master' ])
 			}
 		}
+		stage('checkout') {
+			steps {
+				checkout(scm) sh "git checkout master"
+			}
+		}
 		stage('Maven Clean') {
 			steps {
 				sh "mvn clean"
