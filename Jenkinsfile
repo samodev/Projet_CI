@@ -22,7 +22,7 @@ pipeline {
 						steps {
 							sh "mvn test"
 						}
-					}
+					},
 					stage('checkstyle') {
 						steps {
 							sh "mvn checkstyle:checkstyle"
