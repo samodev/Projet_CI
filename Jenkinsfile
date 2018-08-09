@@ -17,17 +17,23 @@ pipeline {
 			}
 		}
 		stage('parallel tests') {
-			steps {
 				parallel(
-					Maven test: {
-						sh "mvn test"
-					},
-					checkstyle: {
-						sh "mvn checkstyle:checkstyle"
-                               			 step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'gitlist-PHP/build/logs/phpcs.xml'])
+					stage('Maven test') {
+						steps {
+							sh "mvn test"
+						}
+					}
+					stage('checkstyle') {
+						steps {
+							sh "mvn checkstyle:checkstyle"
+						}
+						post {
+							always {
+                               					 step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'gitlist-PHP/build/logs/phpcs.xml'])
+							}
+						}
                                 	}
 				)
-                        }
 		}
 		stage('Maven build') {
 			steps {
