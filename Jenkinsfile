@@ -21,6 +21,7 @@ pipeline {
 					stage('Maven test') {
 						steps {
 							sh "mvn test"
+							echo currentBuild.result
 						}
 					}
 					stage('checkstyle') {
