@@ -28,7 +28,7 @@ pipeline {
 			}
 			post {
 				always {
-					$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'gitlist-PHP/build/logs/phpcs.xml'
+				step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'gitlist-PHP/build/logs/phpcs.xml'])
 				}
 			}
 		}
