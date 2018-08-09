@@ -214,7 +214,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.50</version>
+          <version>3.0.0</version>
           <reportSets>
             <reportSet>
               <reports>

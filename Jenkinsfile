@@ -24,7 +24,7 @@ pipeline {
 		}
 		stage('checkstyle') {
 			steps {
-				sh "mvn checkstyle:checkstyle"
+				sh "mvn site"
 			}
 		}
 		stage('Maven build') {
