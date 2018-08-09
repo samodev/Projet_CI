@@ -31,10 +31,10 @@ pipeline {
 				sh "mvn deploy"
 			}
 		}
-		stage('remove dir') {
+	/*	stage('remove dir') {
 			steps {
 				deleteDir()
 			}
-		}		
+		} */		
 	}
 }
