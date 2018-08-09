@@ -18,10 +18,12 @@ pipeline {
 		}
 		stage('Maven test') {
 			steps {
-				sh "mvn test"
-			}
-			steps {
-				sh "mvn checkstyle:checkstyle"
+				step {
+					sh "mvn test"
+				}
+				step {
+					sh "mvn checkstyle:checkstyle"
+				}
 			}
 		}
 		stage('Maven build') {
