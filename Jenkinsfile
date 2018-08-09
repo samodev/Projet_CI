@@ -17,12 +17,12 @@ pipeline {
 			}
 		}
 		stage('parallel tests') {
-				parallel(
+				parallel {
 					stage('Maven test') {
 						steps {
 							sh "mvn test"
 						}
-					},
+					}
 					stage('checkstyle') {
 						steps {
 							sh "mvn checkstyle:checkstyle"
@@ -33,7 +33,7 @@ pipeline {
 							}
 						}
                                 	}
-				)
+				}
 		}
 		stage('Maven build') {
 			steps {
